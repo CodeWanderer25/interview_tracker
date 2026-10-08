@@ -3,6 +3,7 @@ import { Navigate, Route, Routes } from 'react-router'
 import MainLayout from '../components/layout/MainLayout'
 import Dashboard from '../pages/Dashboard/Dashboard'
 import Question from '../pages/Questions/Question'
+import MachineCoding from '../pages/Machine/MachineCoding'
 
 const AppRoutes = () => {
   return (
@@ -10,6 +11,7 @@ const AppRoutes = () => {
           <Route element={<MainLayout/> }>
                <Route path="/dashboard" element={<Dashboard />} />
                <Route path="/questions" element={<Question />} />
+               <Route path="/machine-coding" element={<MachineCoding />} />
           </Route>
 
           <Route

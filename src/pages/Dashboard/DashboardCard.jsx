@@ -1,13 +1,16 @@
-import React from "react";
+
+import RecentActivity from "./RecentActivity";
+import { useProjects } from "../../context/ProjectContext";
 
 const DashboardCard = () => {
+  const { projectData } = useProjects();
+  
   const questions =
     JSON.parse(localStorage.getItem("questions")) || [];
+  
 
-  // Total questions
   const totalQuestions = questions.length;
 
-  // DSA
   const dsaQuestions = questions.filter(
     (item) => item.category === "DSA"
   );
@@ -16,7 +19,7 @@ const DashboardCard = () => {
     (item) => item.status === "Completed"
   ).length;
 
-  // Interview QA
+
   const interviewQuestions = questions.filter(
     (item) => item.category === "Technical"
   );
@@ -25,20 +28,18 @@ const DashboardCard = () => {
     (item) => item.status === "Completed"
   ).length;
 
-  // Machine Coding
-  const machineCodingQuestions = questions.filter(
-    (item) => item.category === "Machine Coding"
-  );
 
-  const machineCodingCompleted = machineCodingQuestions.filter(
+
+  const machineCodingCompleted = projectData.filter(
     (item) => item.status === "Completed"
   ).length;
+
 
   const stats = [
     {
       title: "TOTAL QUESTIONS",
       value: totalQuestions,
-      subtitle: "Across all categories",
+      
     },
     {
       title: "DSA COMPLETED",
@@ -53,12 +54,13 @@ const DashboardCard = () => {
     {
       title: "MACHINE CODING",
       completed: machineCodingCompleted,
-      total: machineCodingQuestions.length,
+      total: projectData.length,
     },
   ];
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+    <>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
       {stats.map((item) => {
         const progress =
           item.total > 0
@@ -117,7 +119,11 @@ const DashboardCard = () => {
           </div>
         );
       })}
-    </div>
+
+    
+      </div>
+        <RecentActivity questions={questions}/>
+    </>
   );
 };
 

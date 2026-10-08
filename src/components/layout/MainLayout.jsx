@@ -1,6 +1,7 @@
 import React from "react";
 import Sidebar from "./Sidebar";
 import { Outlet } from "react-router";
+import AddProject from "../../pages/Machine/AddProject";
 
 const MainLayout = () => {
   return (
@@ -8,6 +9,7 @@ const MainLayout = () => {
 
       {/* Sidebar */}
       <Sidebar />
+      {/* <AddProject/> */}
 
       {/* Main Content */}
       <main className="w-[84%]">

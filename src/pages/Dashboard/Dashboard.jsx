@@ -1,4 +1,3 @@
-import React from "react";
 import DashboardCard from "./DashboardCard";
 
 const Dashboard = () => {
@@ -14,8 +13,8 @@ const Dashboard = () => {
             Track your interview preparation and stay consistent.
           </p>
         </div>
-              
-        <DashboardCard/>
+
+        <DashboardCard />
       </div>
     </div>
   );

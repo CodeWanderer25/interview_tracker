@@ -11,7 +11,7 @@ const Sidebar = () => {
   return (
     <div className="w-[16%] min-h-screen bg-white border-r border-gray-200 flex flex-col px-3 py-4">
 
-      {/* Logo / Header */}
+
       <div className="flex items-center gap-2 px-1 mb-8">
         <div className="w-7 h-7 bg-blue-600 rounded-md flex items-center justify-center">
           <Code2 size={15} className="text-white" />
@@ -27,7 +27,7 @@ const Sidebar = () => {
       {/* Navigation */}
       <div className="space-y-1">
 
-        {/* Dashboard */}
+   
         <NavLink
           to="/dashboard"
           className={({ isActive }) =>
