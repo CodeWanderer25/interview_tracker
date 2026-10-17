@@ -50,7 +50,7 @@ const Sidebar = () => {
         <NavLink
           to="/questions"
           className={({ isActive }) =>
-            `flex items-center gap-3 px-2.5 py-2 rounded-md cursor-pointer ${
+            `flex items-center gap-4 px-2.5 py-2 rounded-md cursor-pointer ${
               isActive
                 ? "bg-blue-50 text-blue-600"
                 : "text-gray-600 hover:bg-gray-50"
